@@ -118,7 +118,7 @@ async def enter_salary(message:types.Message, state:FSMContext):
         await state.update_data(
             {"salary":salary}
         )
-        await message.answer("Iltimos o'zingiz haqingizda qisqacha ma'lumot bering.\n\n<b>Masalan:</b>\nHozirda freelancer bo'lib ishlab kelmoqdaman. Ingliz va Rus tillarida gaplasha olaman. Word & Exel dasturlarida ishlay olaman.")
+        await message.answer("Iltimos o'zingiz haqingizda qisqacha ma'lumot bering.")
         await UserState.about.set()
     else:
         await message.answer("Iltimos maoshni to'g'ri kiriting!\n\nMasalan: <b>2000000</b>")
@@ -175,7 +175,7 @@ async def fiveteen(message: types.Message, state: FSMContext):
 
         data = await state.get_data()
         photo = f"{data['photo']}"
-        msg = "<b>Quyidagi ma'lumotlar qabul qilindi</b>\n\n"
+        msg = "<b>Quyidagi Rezyume qabul qilindi</b>\n\n"
         msg += f"1. Ismi ➖ {data['name']}\n\n"
         msg += f"2. yili ➖ {data['year']}\n\n"
         msg += f"3. Telefon ➖ {data['phone']}\n\n"
@@ -188,7 +188,7 @@ async def fiveteen(message: types.Message, state: FSMContext):
 
 
         await bot.send_photo(chat_id=-1001882349838, photo=photo, caption=msg)
-        await message.answer("Biz 72 soat ichida saytga yuklab qo'yamiz!", reply_markup=start)
+        await message.answer("<b>Rezyume qabul qilindi</b>\n\n24 soat ichida kanalga\n48 soat ichida vebsaytga yuklanadi", reply_markup=start)
     elif matn == "❌ Yo'q":
         await message.answer("Elon bekor qilindi\n\nBoshqatdan boshlashingiz mumkin!", reply_markup=start)
 

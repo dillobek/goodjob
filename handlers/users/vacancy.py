@@ -102,7 +102,7 @@ async def enter_find(message:types.Message, state:FSMContext):
     await state.update_data(
         {"region":region}
     )
-    await message.answer("Iltimos arizani yakunlash uchun qisqa ma'lumot yuboring!\n\n<b>Til, Office dasturlari,</b>")
+    await message.answer("Iltimos arizani yakunlash uchun qisqa ma'lumot yuboring!")
     await VacancyState.about.set()
 
 @dp.message_handler(state=VacancyState.about)
@@ -149,7 +149,7 @@ async def fiveteen(message: types.Message, state: FSMContext):
         data = await state.get_data()
         photo = f"{data['photo']}"
 
-        msg = "<b>Quyidagi ma'lumotlar qabul qilindi</b>\n\n"
+        msg = "<b>Quyidagi vakansiya qabul qilindi</b>\n\n"
         msg += f"1. Kompaniya nomi ➖ {data['cname']}\n\n"
         msg += f"2. Ish turi ➖ {data['type']}\n\n"
         msg += f"3. Vakansiya ➖ {data['job']}\n\n"
@@ -163,6 +163,6 @@ async def fiveteen(message: types.Message, state: FSMContext):
 
 
         await bot.send_photo(chat_id=-1001882349838, photo=photo, caption=msg)
-        await message.answer("Biz 72 soat ichida saytga yuklab qo'yamiz!", reply_markup=start)
+        await message.answer("<b>Vakansiya qabul qilindi!\n\n24 soat ichida kanalga\n48 soat ichida vebsaytga yuklanadi", reply_markup=start)
     elif matn == "❌ Yo'q":
         await message.answer("Elon bekor qilindi\n\nBoshqatdan boshlashingiz mumkin!", reply_markup=start)
