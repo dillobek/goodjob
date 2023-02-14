@@ -189,7 +189,9 @@ async def fiveteen(message: types.Message, state: FSMContext):
 
         await bot.send_photo(chat_id=-1001882349838, photo=photo, caption=msg)
         await message.answer("<b>Rezyume qabul qilindi</b>\n\n24 soat ichida kanalga\n48 soat ichida vebsaytga yuklanadi", reply_markup=start)
+        await state.finish()
     elif matn == "❌ Yo'q":
         await message.answer("Elon bekor qilindi\n\nBoshqatdan boshlashingiz mumkin!", reply_markup=start)
+        await state.finish()
 
 
