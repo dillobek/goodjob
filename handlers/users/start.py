@@ -188,7 +188,7 @@ async def fiveteen(message: types.Message, state: FSMContext):
 
 
         await bot.send_photo(chat_id=-1001882349838, photo=photo, caption=msg)
-        await message.answer("Bizga mos kelsangiz 20 ish kunida bog'lanamiz\n\n20 ish kunida bog'lanmasak boshqa ish qidirishingiz mumkin!", reply_markup=start)
+        await message.answer("Biz 72 soat ichida saytga yuklab qo'yamiz!", reply_markup=start)
     elif matn == "❌ Yo'q":
         await message.answer("Elon bekor qilindi\n\nBoshqatdan boshlashingiz mumkin!", reply_markup=start)
 
